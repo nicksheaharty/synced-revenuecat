@@ -1,0 +1,16 @@
+node_modules/
+.expo/
+dist/
+ios/
+android/
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision
+assets/GoogleService-Info.plist
+assets/GoogleOauth.plist
+assets/google-services.json
+.DS_Store

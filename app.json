@@ -1,0 +1,82 @@
+{
+  "expo": {
+    "name": "Synced",
+    "slug": "synced-revenuecat",
+    "version": "1.0.1",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "scheme": [
+      "com.example.synced"
+    ],
+    "ios": {
+      "supportsTablet": false,
+      "deploymentTarget": "16.4",
+      "bundleIdentifier": "com.example.synced",
+      "googleServicesFile": "./assets/GoogleService-Info.plist",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSPhotoLibraryUsageDescription": "Synced may let you attach photos from your library to messages and tasks."
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#FF9670",
+        "foregroundImage": "./assets/android-icon-foreground.png"
+      },
+      "package": "com.example.synced",
+      "googleServicesFile": "./assets/google-services.json"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      "expo-secure-store",
+      "@react-native-firebase/app",
+      "@react-native-firebase/auth",
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "enableMinifyInReleaseBuilds": true,
+            "enableShrinkResourcesInReleaseBuilds": true
+          },
+          "ios": {
+            "useFrameworks": "static",
+            "extraBuildSettings": {
+              "SWIFT_VERSION": "5.10",
+              "SWIFT_STRICT_CONCURRENCY": "minimal"
+            }
+          }
+        }
+      ],
+      "./plugins/with-podfile-jsi-workarounds.js",
+      "@react-native-community/datetimepicker",
+      "expo-sharing",
+      "expo-image-picker",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#4429F2"
+        }
+      ],
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Allow Synced to use the microphone to transcribe your agent task.",
+          "speechRecognitionPermission": "Allow Synced to use speech recognition to transcribe your agent task."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {}
+    }
+  }
+}
